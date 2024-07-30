@@ -1,0 +1,7 @@
+{
+    "name": "30",
+    "children": [
+        { "name": "20", "children": [ { "name": "10" }, { "name": "25" } ] },
+        { "name": "40", "children": [ { "name": "35" }, { "name": "50" } ] }
+    ]
+}

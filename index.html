@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AVL Tree Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="explanation">
+        <h1>AVL Tree Visualization</h1>
+        <p>
+            This visualization demonstrates the operations of an AVL tree, a self-balancing binary search tree. 
+            The AVL tree maintains its balance through rotations during insertions and deletions to ensure that 
+            the height difference between the left and right subtrees of any node is at most one.
+        </p>
+        <h2>How it Works</h2>
+        <p>
+            You can insert or remove values using the input field and buttons below. The tree will automatically 
+            rebalance itself after each operation. The heights (H) and balance factors (BF) of the nodes will 
+            be updated accordingly and displayed next to each node.
+        </p>
+        <h3>Height</h3>
+        <p>
+            The height of a node is defined as the number of edges on the longest path from the node to a leaf. 
+            Leaf nodes have a height of 0. For example, if a node has a left child with height 1 and a right child 
+            with height 2, the height of this node will be 3.
+        </p>
+        <h3>Balance Factor</h3>
+        <p>
+            The balance factor of a node is the difference between the heights of the left and right subtrees of that node. 
+            It is calculated as:
+        </p>
+        <p style="text-align: center;"><strong>Balance Factor = Height of Left Subtree - Height of Right Subtree</strong></p>
+        <p>
+            A node is considered balanced if its balance factor is -1, 0, or 1. If the balance factor of a node 
+            becomes less than -1 or greater than 1, rotations are performed to rebalance the tree.
+        </p>
+        <h3>Rotations</h3>
+        <p>
+            There are four types of rotations used to maintain the AVL tree balance:
+            <ul>
+                <li><strong>Left Rotation:</strong> Performed when the right subtree is higher.</li>
+                <li><strong>Right Rotation:</strong> Performed when the left subtree is higher.</li>
+                <li><strong>Left-Right Rotation:</strong> A combination of left and right rotations.</li>
+                <li><strong>Right-Left Rotation:</strong> A combination of right and left rotations.</li>
+            </ul>
+        </p>
+    </div>
+    <div>
+        <input type="number" id="valueInput" placeholder="Value">
+        <button onclick="insertValue()">Insert</button>
+        <button onclick="removeValue()">Remove</button>
+    </div>
+    <svg width="960" height="600"></svg>
+    <script src="avlTree.js"></script>
+    <script src="visualization.js"></script>
+</body>
+</html>
